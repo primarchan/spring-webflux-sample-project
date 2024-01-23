@@ -15,10 +15,10 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public Mono<User> create(UserCreateRequest request) {
+    public Mono<User> create(String name, String email) {
         User user = User.builder()
-                .name(request.getName())
-                .email(request.getEmail())
+                .name(name)
+                .email(email)
                 .build();
 
         return userRepository.save(user);
@@ -36,11 +36,11 @@ public class UserService {
         return userRepository.deleteById(id);
     }
 
-    public Mono<User> update(Long id, UserUpdateRequest request) {
+    public Mono<User> update(Long id, String name, String email) {
         return userRepository.findById(id)
                 .flatMap(user -> {
-                    user.setName(request.getName());
-                    user.setEmail(request.getEmail());
+                    user.setName(name);
+                    user.setEmail(email);
                     return userRepository.save(user);
                 });
     }

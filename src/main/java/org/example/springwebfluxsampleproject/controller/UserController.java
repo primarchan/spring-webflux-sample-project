@@ -18,7 +18,7 @@ public class UserController {
 
     @PostMapping("")
     public Mono<UserResponse> createUser(@RequestBody UserCreateRequest request) {
-        return userService.create(request)
+        return userService.create(request.getName(), request.getEmail())
                 .map(UserResponse::of);
     }
 
@@ -43,7 +43,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public Mono<ResponseEntity<UserResponse>> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
-        return userService.update(id, request)
+        return userService.update(id, request.getName(), request.getEmail())
                 .map(user -> ResponseEntity.ok(UserResponse.of(user)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
