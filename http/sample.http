@@ -3,3 +3,30 @@ GET http://localhost:8080/hello-functional
 
 ### /sample/hello
 GET http://localhost:8080/sample/hello
+
+### 사용자 등록
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Kevin An",
+  "email": "kevin@gmail.com"
+}
+
+### 사용자 전체 조회
+GET http://localhost:8080/users
+
+### 사용자 단건 조회
+GET http://localhost:8080/users/1
+
+### 사용자 삭제
+DELETE http://localhost:8080/users/2
+
+### 사용자 정보 수정
+PUT http://localhost:8080/users/1
+Content-Type: application/json
+
+{
+  "name": "Tony Lee",
+  "email": "tony@gmail.com"
+}
