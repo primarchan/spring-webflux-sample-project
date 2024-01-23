@@ -1,0 +1,5 @@
+### /hello-functional
+GET http://localhost:8080/hello-functional
+
+### /sample/hello
+GET http://localhost:8080/sample/hello
