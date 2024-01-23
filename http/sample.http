@@ -30,3 +30,12 @@ Content-Type: application/json
   "name": "Tony Lee",
   "email": "tony@gmail.com"
 }
+
+### getPostContent
+GET http://localhost:8080/posts/11
+
+### getMultiPostContent
+GET http://localhost:8080/posts/search-single?ids=1,2,3
+
+### getParallelMultiPostContent
+GET http://localhost:8080/posts/search-parallel?ids=1,2,3
