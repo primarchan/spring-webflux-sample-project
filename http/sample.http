@@ -22,6 +22,9 @@ GET http://localhost:8080/users/1
 ### 사용자 삭제
 DELETE http://localhost:8080/users/2
 
+### deleteUserByName
+DELETE http://localhost:8080/users/search?name=Kevin An
+
 ### 사용자 정보 수정
 PUT http://localhost:8080/users/1
 Content-Type: application/json
@@ -45,7 +48,7 @@ POST http://localhost:8080/v2/posts
 Content-Type: application/json
 
 {
-  "userId": 1,
+  "userId": 3,
   "title": "타이틀입니다.",
   "content": "Spring Webflux 실습 "
 }
@@ -58,3 +61,6 @@ GET http://localhost:8080/v2/posts/1
 
 ### deletePost
 DELETE http://localhost:8080/v2/posts/1
+
+### getUserPosts
+GET http://localhost:8080/users/3/posts

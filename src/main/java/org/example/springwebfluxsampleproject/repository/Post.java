@@ -8,6 +8,7 @@ import org.springframework.cglib.core.Local;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -37,5 +38,8 @@ public class Post {
     @Column("updated_at")
     @LastModifiedDate
     private LocalDateTime updatedAt;
+
+    @Transient
+    private User user;
 
 }

@@ -35,4 +35,9 @@ public class PostServiceV2 {
         return postR2dbcRepository.deleteById(id);
     }
 
+    public Flux<Post> findAllByUserId(Long id) {
+        // return postR2dbcRepository.findByUserId(id);
+        return postR2dbcRepository.findAllByUserId(id);
+    }
+
 }
