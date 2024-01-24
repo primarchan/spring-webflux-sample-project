@@ -39,3 +39,22 @@ GET http://localhost:8080/posts/search-single?ids=1,2,3
 
 ### getParallelMultiPostContent
 GET http://localhost:8080/posts/search-parallel?ids=1,2,3
+
+### createPost
+POST http://localhost:8080/v2/posts
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "title": "타이틀입니다.",
+  "content": "Spring Webflux 실습 "
+}
+
+### findAllPost
+GET http://localhost:8080/v2/posts
+
+### findPost
+GET http://localhost:8080/v2/posts/1
+
+### deletePost
+DELETE http://localhost:8080/v2/posts/1
